@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+
+}
+
+.list {
+    padding: 7px;
+    width: 30%;
+    width: 50%;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.btn {
+    padding: 7px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: 2px solid black;
+}
+
+nav h2 {
+    margin-left: 35px;
+    color: white;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+ul {
+    width: 50%;
+    margin: auto;
+}
+
+ul li {
+    list-style: none;
+    border: 2px solid black;
+    margin: 10px auto;
+    background-color: white;
+    padding: 5px;
+    font-weight: bolder;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+li span {
+    background-color: red;
+    margin: 0 -50px;
+    border: 2px solid black;
+    border-radius: 3px;
+    font-weight: bolder;
+}
+
+.listvalue {
+    text-align: center;
+    margin: 26px;
+}
+
+.list {
+    font-weight: bolder;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ToDoList App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+
+        }
+
+        .list {
+            padding: 7px;
+            width: 30%;
+            width: 50%;
+            border-radius: 5px;
+            border: 2px solid black;
+            background-color: #e2d8d8;
+        }
+
+        .btn {
+            padding: 7px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-left: 10px;
+            border: 2px solid black;
+        }
+
+        nav h2 {
+            margin-left: 35px;
+            color: white;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        ul {
+            width: 50%;
+            margin: auto;
+        }
+
+        ul li {
+            list-style: none;
+            border: 2px solid black;
+            margin: 10px auto;
+            background-color: #e2d8d8;
+            padding: 5px;
+            font-weight: bolder;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        li span {
+            background-color: red;
+            margin: 0 -50px;
+            border: 2px solid black;
+            border-radius: 3px;
+            font-weight: bolder;
+        }
+
+        .listvalue {
+            text-align: center;
+            margin: 26px;
+        }
+
+        .list {
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <input type="text" id="name" name="name" class="list">
+        <button class="btn">Add List</button>
+    </div>
+
+    <div class="listvalue">
+
+    </div>
+
+    <script>
+
+        let list = document.querySelector('.list');
+        let mylist = document.querySelector('.mylist');
+        let btn = document.querySelector('.btn');
+        let listvalue = document.querySelector('.listvalue');
+        let ul = document.createElement('ul');
+        listvalue.appendChild(ul);
+
+        btn.addEventListener('click', () => {
+
+            if (list.value === '') {
+                alert('error');
+            }
+
+            if (list.value !== '') {
+                let li = document.createElement('li');
+                ul.append(li);
+                li.classList.add('notes');
+                li.innerHTML = list.value;
+                let span = document.createElement('span');
+                span.classList.add('delete');
+                span.innerHTML = 'X';
+                li.appendChild(span);
+                list.value = '';
+
+                span.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('delete')) {
+                        e.target.parentElement.remove();
+                    }
+                })
+            };
+        })
+
+        list.addEventListener('keyup', (e) => {
+
+            if (list.value === '') {
+                alert('this cant be add to the list beacsue it is empty')
+            }
+
+            if (e.key === 'Enter' && list.value !== '') {
+
+                let li = document.createElement('li');
+                ul.append(li);
+                li.innerHTML = list.value;
+                let span = document.createElement('span');
+                span.innerHTML = 'X';
+                span.classList.add('delete');
+                li.appendChild(span);
+                list.value = '';
+
+                span.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('delete')) {
+                        e.target.parentElement.remove();
+                    }
+                })
+            }
+        })
+
+    </script>
+</body>
+
+</html>
